@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Schulte - Luyện tập Tập trung & Tốc độ đọc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Tiêu đề -->
+        <header>
+            <h1>Bảng Schulte - Luyện tập Tập trung & Tốc độ đọc</h1>
+        </header>
+
+        <!-- Khu vực điều khiển -->
+        <div class="controls">
+            <!-- Phần Setup -->
+            <div class="setup-section">
+                <div class="control-group">
+                    <label for="gridSize">Kích thước Bảng:</label>
+                    <select id="gridSize">
+                        <option value="5">5x5</option>
+                        <option value="7">7x7</option>
+                        <option value="9">9x9</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Chế độ Chơi:</label>
+                    <div class="game-mode">
+                        <label class="radio-label">
+                            <input type="radio" name="gameMode" value="free" checked>
+                            <span>Chơi Tự do</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gameMode" value="timed">
+                            <span>Chơi Giới hạn Thời gian</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="control-group" id="timeLimitGroup" style="display: none;">
+                    <label for="timeLimit">Thời gian Giới hạn (giây):</label>
+                    <input type="number" id="timeLimit" value="60" min="10" max="300">
+                </div>
+            </div>
+
+            <!-- Phần Buttons -->
+            <div class="buttons-section">
+                <button id="startBtn" class="btn btn-primary">Bắt đầu</button>
+                <button id="stopBtn" class="btn btn-secondary" disabled>Dừng/Thiết lập lại</button>
+            </div>
+        </div>
+
+        <!-- Khu vực hiển thị chính -->
+        <div class="game-area">
+            <div class="timer-display">
+                <div class="timer" id="timer">00:00.00</div>
+            </div>
+
+            <div class="next-number">
+                <span id="nextNumberText">Tìm số: 1</span>
+            </div>
+
+            <div class="grid-container" id="gridContainer">
+                <!-- Bảng Schulte sẽ được tạo động ở đây -->
+            </div>
+        </div>
+
+        <!-- Hướng dẫn/Thông báo & Kết quả -->
+        <div class="info-area">
+            <div class="instructions" id="instructions">
+                <h3>Hướng dẫn:</h3>
+                <p>Nhấp vào các số theo thứ tự từ 1 đến số cuối cùng. Tập trung và cố gắng hoàn thành nhanh nhất có thể!</p>
+            </div>
+
+            <div class="results" id="results" style="display: none;">
+                <!-- Kết quả sẽ được hiển thị ở đây -->
+            </div>
+
+            <div class="status" id="status">
+                <!-- Thông báo trạng thái -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
