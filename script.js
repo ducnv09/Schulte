@@ -45,6 +45,7 @@ class SchulteGame {
     updateGridSize() {
         this.gridSize = parseInt(this.gridSizeSelect.value);
         this.totalNumbers = this.gridSize * this.gridSize;
+        this.createGrid(); // Tạo lại bảng khi thay đổi kích thước
     }
 
     updateGameMode() {
@@ -92,7 +93,10 @@ class SchulteGame {
     }
 
     handleCellClick(cell) {
-        if (!this.isPlaying) return;
+        if (!this.isPlaying) {
+            this.showStatus('Nhấn "Bắt đầu" để bắt đầu trò chơi!', 'info');
+            return;
+        }
         
         const clickedNumber = parseInt(cell.dataset.number);
         
@@ -269,6 +273,7 @@ class SchulteGame {
         this.updateGameMode();
         this.updateTimeLimit();
         this.updateNextNumberText();
+        this.createGrid(); // Tạo bảng ngay từ đầu
     }
 }
 
