@@ -78,6 +78,11 @@ class SchulteGame {
         grid.className = 'grid';
         grid.style.gridTemplateColumns = `repeat(${this.gridSize}, 1fr)`;
         
+        // Thêm class cho bảng lớn để CSS có thể target
+        if (this.gridSize >= 7) {
+            grid.classList.add('large-grid');
+        }
+        
         this.gridNumbers = this.generateRandomNumbers();
         
         for (let i = 0; i < this.totalNumbers; i++) {

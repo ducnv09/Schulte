@@ -345,9 +345,21 @@ select:focus, input[type="number"]:focus {
     }
     
     .grid-cell {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    /* Bảng lớn trên mobile */
+    .large-grid .grid-cell {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+    
+    .grid {
+        gap: 2px;
+        padding: 2px;
     }
     
     .btn {
@@ -358,9 +370,16 @@ select:focus, input[type="number"]:focus {
 
 @media (max-width: 480px) {
     .grid-cell {
-        width: 45px;
-        height: 45px;
-        font-size: 1rem;
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    /* Bảng lớn trên mobile nhỏ */
+    .large-grid .grid-cell {
+        width: 30px;
+        height: 30px;
+        font-size: 0.7rem;
     }
     
     .timer {
@@ -369,5 +388,11 @@ select:focus, input[type="number"]:focus {
     
     #nextNumberText {
         font-size: 1.2rem;
+    }
+    
+    /* Giảm gap cho bảng lớn trên mobile nhỏ */
+    .grid {
+        gap: 1px;
+        padding: 1px;
     }
 }
